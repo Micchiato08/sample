@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="/css/main.css">
+    <title>about me</title>
+</head>
+    <style>
+.me{
+    padding-top: 3%;
+    padding-left: 35%;
+}
+.profile{
+    background-color:#00203FFF; /* Green background */
+    color: rgb(201, 227, 241); /* White text */
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 10px;
+    border-color: black;
+    width: 350px; /* Fixed width for demonstration */
+    height: 450px; /* Fixed height for demonstration */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transition */
+}
+.profile .rounded-image{
+    border-radius: 50%; /* Makes the image circular */
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set height equal to width */
+    object-fit: cover; /* Ensures that the image covers the area without distortion */
+}
+    </style>
+<body>
+    <div class="navbar">
+        <a href="Index.html">Home</a>
+        <label class="switch">
+            <input type="checkbox" id="toggle-button">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text"></span>
+    </div>
+    <div class="me">
+        <div class="profile">
+            <img src="/images/IMG_20250402_075603.jpg" class="rounded-image" alt="Photo">
+            <p>
+                Hi, I’m Michael Angelo Marquez, a student at Romblon State University – Romblon Campus. 
+                I’m passionate about learning and constantly seeking ways to grow both academically and personally. 
+                I have a strong love for volleyball, where I’ve learned the value of teamwork, discipline, 
+                and pushing myself to improve. Outside of school, I enjoy going on nature trips and taking 
+                long rides being outdoors helps me recharge and stay inspired. I’m always open to new experiences a
+                nd challenges that can help me become a better version of myself.
+            </p>
+        </div>
+    </div>
+    <script>
+        const toggleButton = document.getElementById("toggle-button");
+
+        toggleButton.addEventListener("change", function() {
+            document.body.classList.toggle("dark-mode");
+            const modeText = document.querySelector('.switch input');
+            console.log(this.checked ? 'Switch is ON' : 'Switch is OFF');
+        });
+    </script>
+</body>
+</html>

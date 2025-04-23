@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 5px;
+            transition: background-color 0.5s, color 0.5s;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+           .navbar {
+            background-color: #333; /* Dark background */
+            overflow: hidden;
+            }
+
+            .navbar a {
+                float: left;              /* Align links to the left */
+                display: block;           /* Block-level links */
+                color: white;             /* White text */
+                text-align: center;       /* Center text */
+                padding: 15px 20px;       /* Padding */
+                text-decoration: none;     /* No underline */
+                cursor: pointer; 
+            }
+            .navbar a:hover {
+            background-color: #ddd;   /* Light hover background */
+            color: black;             /* Dark text on hover */
+            }
+        .navbar .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .navbar input[type="checkbox"] {
+            display: none;
+        }
+        .navbar .toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .navbar .toggle:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.3s;
+        }
+        .navbar input[type="checkbox"]:checked + .toggle {
+            background-color: #007BFF;
+        }
+        .navbar input[type="checkbox"]:checked + .toggle:before {
+            transform: translateX(30px);
+        }
+        .socials {
+            text-align: center;
+            margin: 70px 0;
+        }
+        .socials a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 30px;
+            color: #007BFF;
+            transition: transform 0.3s;
+        }
+        .socials a:hover {
+            transform: scale(1.2);
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s;
+        }
+        .contact-form textarea {
+            width: 95%;
+            height: 100px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none;
+            transition: border 0.3s;
+        }
+        .contact-form textarea:focus {
+            border: 1px solid #007BFF;
+            outline: none;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10px;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #0056b3;
+        }
+        .messages {
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode .navbar {
+            background-color: #555;
+            border: none;
+        }
+        .dark-mode .contact-form {
+            background: #444;
+            border: 1px solid #666;
+        }
+        .dark-mode .contact-form textarea {
+            border: 1px solid #555;
+        }
+        .dark-mode .contact-form button {
+            background: #555;
+        }
+        .dark-mode .socials a {
+            color: #007BFF;
+        }
+        .dark-mode .socials a:hover {
+            color: #66b2ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="Index.html">Home</a>
+        <div class="toggle-container">
+            <label>
+                <input type="checkbox" id="toggle-button" />
+                <div class="toggle"></div>
+            </label>
+        </div>
+    </div>
+
+    <div class="socials">
+        <a href="https://www.facebook.com/michaelangelo.marquez.58" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/input.micchiato/?igsh=OGYyc3B6ejUzdnYx#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+    <div class="contact-form">
+        <textarea id="message" placeholder="Write your message here..."></textarea>
+        <button onclick="sendMessage()">Send Message</button>
+    </div>
+
+    <div class="messages" id="messagesDisplay"></div>
+
+    <script>
+        // Toggle Dark Mode
+        const toggleButton = document.getElementById("toggle-button");
+
+        toggleButton.addEventListener("change", function() {
+            document.body.classList.toggle("dark-mode");
+            console.log(this.checked ? 'Switch is ON' : 'Switch is OFF');
+        });
+
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const messagesDisplay = document.getElementById('messagesDisplay');
+
+            if (messageInput.value.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = messageInput.value;
+                
+
+                // Clear the input field after sending
+                messageInput.value = '';
+            } else {
+                alert('Please enter a message before sending.');
+            }
+        }
+    </script>
+</body>
+</html>

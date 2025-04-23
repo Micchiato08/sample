@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="/css/main.css">   
+    <title>Image Gallery</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Index.html">Home</a>
+        <label class="switch">
+            <input type="checkbox" id="toggle-button">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text"></span>
+    </div>
+    <h1>My Gallery</h1>
+    <div class="gallery">
+        <div class="paragraph">    
+            <p>I enjoy taking long rides and going on adventures because 
+            they help me relax and find peace.  I believe that in order to 
+            obtain inner peace and contentment, you must love and appreciate the world.  <br>
+            "Look deep into nature, and then you will understand everything better." - Einstein, Albert
+            </p>
+        </div>
+        <div class="gallery-item"><img src="/images/IMG_20250225_112303.jpg" alt="Photo 1"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250314_124819.jpg" alt="Photo 2"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250401_180632.jpg" alt="Photo 3"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250405_184318.jpg" alt="Photo 4"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250406_153148_1.jpg" alt="Photo 5"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250411_093828.jpg" alt="Photo 6"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250414_143342.jpg" alt="Photo 7"></div>
+        <div class="gallery-item"><img src="/images/IMG_20250414_143735.jpg" alt="Photo 8"></div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById("toggle-button");
+
+        toggleButton.addEventListener("change", function() {
+            document.body.classList.toggle("dark-mode");
+            const modeText = document.querySelector('.switch input');
+            console.log(this.checked ? 'Switch is ON' : 'Switch is OFF');
+        });
+    </script>
+</body>
+</html>

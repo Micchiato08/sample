@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #C2b280;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 0%;
+    }
+
+    .toggle-button {
+        margin: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+        background-color: #2E2E2E;
+        color: white;
+}
+
+.container {
+    display: flex;
+    margin-top: 50px;
+    padding-left: 145px;
+    gap: 20px; /* Space between boxes */
+}
+.a .box{
+    text-decoration: none; /* Remove underline */
+    color: #4CAF50; /* Link color */
+    padding: 10px 15px;
+    border: 1px solid #4CAF50; /* Optional: border for aesthetic */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+/* Optional: Change background color on hover */
+.a .box:hover {
+    background-color: #e0e0e0; /* Light grey background on hover */
+}
+.box {
+    background-color:#00203FFF; /* Green background */
+    color: rgb(201, 227, 241); /* White text */
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-top: 0%;
+    text-align: center;
+    border-radius: 10px;
+    border-color: black;
+    width: 250px; /* Fixed width for demonstration */
+    height: 250px; /* Fixed height for demonstration */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transition */
+}
+
+h1{
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Hover effect for the box */
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    opacity: 90%;
+}
+
+button {
+    position: absolute; /* Positioning the button absolutely */
+    top: 20px; /* Adjusts distance from the top */
+    right: 20px; /* Adjusts distance from the right */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.navbar {
+    background-color: #333; /* Dark background */
+    overflow: hidden;
+}
+
+.navbar .switch {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    width: 60px; /* Width of the switch */
+    height: 30px; /* Height of the switch */
+}
+
+.switch input {
+    opacity: 0; /* Hide the default checkbox */
+    width: 0; /* Hide the default checkbox */
+    height: 0; /* Hide the default checkbox */
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default background color */
+    transition: .4s; /* Transition effect */
+    border-radius: 20px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px; /* Height of the slider knob */
+    width: 20px; /* Width of the slider knob */
+    left: 4px; /* Space from the left */
+    bottom: 4px; /* Space from the bottom */
+    background-color: white; /* Color of the knob */
+    transition: .4s; /* Transition effect */
+    border-radius: 50%; /* Circular knob */
+}
+
+/* Checked state */
+input:checked + .slider {
+    background-color: #2196F3; /* Background color when checked */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move the knob to the right */
+}
+
+.navbar a {
+    float: left;              /* Align links to the left */
+    display: block;           /* Block-level links */
+    color: white;             /* White text */
+    text-align: center;       /* Center text */
+    padding: 15px 20px;       /* Padding */
+    text-decoration: none;     /* No underline */
+    cursor: pointer; 
+}
+
+.navbar a:hover {
+    background-color: #ddd;   /* Light hover background */
+    color: black;             /* Dark text on hover */
+}
+
+.gallery {
+    display: flex;             /* Use Flexbox */
+    padding-top: 0%;
+    margin-left: 15%;
+    flex-wrap: wrap;          /* Wrap to the next line */
+    gap: 10px;                /* Space between images */
+    max-width: 900px;         /* Max width for the gallery */
+    margin-top: 20px;         /* Space between navbar and gallery */
+}
+
+.paragraph{
+    text-align: center;
+}
+.gallery-item {
+    flex: 0 0 calc(25% - 10px); /* Each item takes 25% width, minus gap */
+    overflow: hidden;          /* Hide overflow for better visual */
+    border-radius: 8px;       /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.gallery-item img {
+    width: 100%;              /* Make image fill the container */
+    height: auto;             /* Maintain aspect ratio */
+    border-radius: 8px;       /* Match corners with container */
+    display: block;           /* Remove gaps between images */
+}
+
+/* Hover effect for image selection */
+.gallery-item:hover {
+    transform: scale(1.05);       /* Slight scale on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Floating effect */
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        flex: 0 0 calc(50% - 10px); /* 2 items per row on smaller screens */
+    }
+}
